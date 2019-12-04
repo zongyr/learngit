@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory >
+		<!-- 是否显示sql执行 -->
+		<property name="show_sql">true</property>
+		<!-- 设置方言，即数据库的平台 -->
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.PostgreSQLDialect
+		</property>
+		<!-- 设置数据库驱动 -->
+		<property name="connection.driver_class">
+			org.postgresql.Driver
+		</property>
+		<!-- 设置数据库url -->
+		<property name="connection.url">
+			jdbc:postgresql://10.91.3.3:5432/poss?useUnicode=true&amp;characterEncoding=utf8
+		</property>
+		<!-- 设置连接用户名 -->
+		<property name="connection.username">sde</property>
+		<!-- 设置连接密码 -->
+		<property name="connection.password">ABC.123456</property>
+		<!--Examda,是否使用数据库外连接-->
+ 		<property name="hibernate.use_out_join">True</property>
+		 <!--是否将运行产生的sql语句输出到日志-->
+  	    <property name="hibernate.show_sql">true</property>
+  	    <property name="hibernate.format_sql">true</property>
+	
+		
+		<mapping resource="com/c503/poss/model/sm/SystemLog.hbm.xml"/>
+		
+		<!-- 南网灾情评估部分 -->
+		<mapping resource="com/c503/poss/model/disaster/DsAtmosphere.hbm.xml" />
+		<mapping resource="com/c503/poss/model/disaster/DsDamageImage.hbm.xml" />
+		<mapping resource="com/c503/poss/model/disaster/DsDamageVideo.hbm.xml" />
+		<mapping resource="com/c503/poss/model/disaster/DsDisaster.hbm.xml" />
+		<mapping resource="com/c503/poss/model/disaster/DsDisasterAssess.hbm.xml" />
+		<mapping resource="com/c503/poss/model/disaster/DsDisasterDamage.hbm.xml" />
+		<mapping resource="com/c503/poss/model/disaster/DsDisasterForecast.hbm.xml" />
+		<mapping resource="com/c503/poss/model/disaster/DsDisasterLine.hbm.xml" />
+		<mapping resource="com/c503/poss/model/disaster/DsDisasterType.hbm.xml" />
+		<mapping resource="com/c503/poss/model/disaster/DsReport.hbm.xml" />
+		<mapping resource="com/c503/poss/model/disaster/DsTowerCost.hbm.xml" />
+		<mapping resource="com/c503/poss/model/disaster/DsTowerDamageLevel.hbm.xml" />
+		<mapping resource="com/c503/poss/model/disaster/DsWireCost.hbm.xml" />
+		<mapping resource="com/c503/poss/model/disaster/DsWireDamageLevel.hbm.xml" />
+		
+		</session-factory>
+</hibernate-configuration>
